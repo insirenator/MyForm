@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Form</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<main class="container">
+		<form class="form" id="data-form">
+			<h2 id="title">Enter Your Details</h2>
+			<div>
+				<label for="First Name">First Name : </label>
+				<input type="text" name="First Name" placeholder="First Name" class="field">
+			</div>
+			<div>
+				<label for="Last Name">Last Name : </label>
+				<input type="text" name="Last Name" placeholder="Last Name" class="field">
+			</div>
+			<div>
+				<label for="Gender">Gender : </label>
+				<input type="radio" name="Gender" value="Male">Male
+				<input type="radio" name="Gender" value="Female">Female
+			</div>
+			<div>
+				<label>Email : </label>
+				<input type="email" name="Email" placeholder="Email" class="field">
+			</div>
+			<div>
+				<label>Select Language : </label>
+				<select name="Language">
+					<option disabled selected value="">none</option>
+					<option value="Hindi">Hindi</option>
+					<option value="English">English</option>
+					<option value="Kashmiri">Kashmiri</option>
+					<option value="Gojri">Gojri</option>
+				</select>
+			</div>
+			<div>
+				<button type="submit" id="submit-btn">Submit</button>
+			</div>
+		</form>
+
+		<div id="data"></div>
+	</main>
+
+	<script src="./index.js"></script>
+</body>
+</html>
