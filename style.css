@@ -4,6 +4,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	padding: 10px;
+}
+
 .container{
 	/*height: 100vh;*/
 	display: flex;
@@ -18,7 +22,7 @@
 	align-items: flex-start;
 	justify-content: space-around;
 	height: 600px;
-	width: clamp(400px, 80%, 600px);
+	width: clamp(350px, 80%, 600px);
 	margin-top: 15px;
 	border: none;
 	border-radius: 8px;
@@ -68,7 +72,7 @@
 	align-items: flex-start;
 	justify-content: space-around;
 	height: 400px;
-	width: clamp(400px, 80%, 600px);
+	width: clamp(350px, 80%, 600px);
 	font-size: 18px;
 	border-radius: 8px;
 	box-shadow: 0px 2px 5px black;
