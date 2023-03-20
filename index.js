@@ -1,4 +1,14 @@
-let userCount = 0;
+let userCount = function() {
+	let count = sessionStorage.getItem('userCount');
+
+	if (count === null) {
+		sessionStorage.setItem('userCount', 0);
+		return 0;
+	}
+
+	return parseInt(count) + 1;
+}();
+
 const form = document.querySelector('#data-form');
 const submitBtn = document.querySelector('#submit-btn');
 
@@ -11,11 +21,11 @@ submitBtn.addEventListener('click', (e) => {
 	const values = [...formData.entries()];
 	console.log(values);
 
-	localStorage.setItem(userCount, JSON.stringify(values));
+	sessionStorage.setItem(userCount, JSON.stringify(values));
+	sessionStorage.setItem('userCount', userCount);
 
 	// Increment the user count
 	userCount++;
-
 
 	displayData();	
 });
@@ -26,7 +36,7 @@ function displayData() {
 	data_el.classList.remove('hide');
 
 	for (let i = 0; i < userCount; i++) {
-		let values = JSON.parse(localStorage.getItem(i));
+		let values = JSON.parse(sessionStorage.getItem(i));
 
 		data_el.innerHTML += `<p class="user">USER ${i+1}</p>`;
 

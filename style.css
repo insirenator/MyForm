@@ -71,6 +71,29 @@ body {
 	background-color: #5283EC; 
 }
 
+#clear-btn {
+	color: white;
+	font-size: 14px;
+	width: 100px;
+	padding: 10px;
+	background-color: #FF2400;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 0px 1px 4px black;
+	cursor: pointer;
+	margin: 0 auto; 
+	margin-top: 10px;
+}
+
+#clear-btn:hover {
+	background-color: #F1493A; 
+	box-shadow: 0px 2px 5px black;
+}
+
+#clear-btn:active {
+	background-color: #FF1400; 
+}
+
 .data {
 	display: flex;
 	flex-direction: column;
