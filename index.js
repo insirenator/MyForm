@@ -1,6 +1,6 @@
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.querySelector('#data-form');
 let userCount = 0;
+const form = document.querySelector('#data-form');
+const submitBtn = document.querySelector('#submit-btn');
 
 submitBtn.addEventListener('click', (e) => {
 	// prevent form submission
@@ -22,7 +22,7 @@ submitBtn.addEventListener('click', (e) => {
 
 function displayData() {
 	const data_el = document.querySelector('.data');
-	data_el.innerHTML= '<h3 id="data-title">Details</h3>';
+	data_el.innerHTML = '<h3 id="data-title">Details</h3>';
 	data_el.classList.remove('hide');
 
 	for (let i = 0; i < userCount; i++) {
@@ -32,6 +32,6 @@ function displayData() {
 
 		for (const value of values) {
 		data_el.innerHTML += `<p class="entry"><span class="entry-title">${value[0]} :</span> ${value[1]}</p>`; 
-	}
+		}
 	}
 }
