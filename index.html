@@ -11,29 +11,29 @@
 	<main class="container">
 		<form class="form" id="data-form">
 			<h2 id="title">Enter Your Details</h2>
-			<div>
-				<label for="First Name">First Name : </label>
+			<div class="group">
+				<label for="First Name" class="field-name">FIRST NAME</label>
 				<input type="text" name="First Name" placeholder="First Name" class="field">
 			</div>
-			<div>
-				<label for="Last Name">Last Name : </label>
+			<div class="group">
+				<label for="Last Name" class="field-name">LAST NAME</label>
 				<input type="text" name="Last Name" placeholder="Last Name" class="field">
 			</div>
-			<div>
-				<label for="Gender">Gender : </label>
-				<input type="radio" name="Gender" value="Male"> Male
-				<input type="radio" name="Gender" value="Female"> Female
+			<div id="gender">
+				<label for="Gender" class="field-name">GENDER : </label>
+				<input type="radio" name="Gender" value="Male"> <span class="gender-field">MALE</span>
+				<input type="radio" name="Gender" value="Female"> <span class="gender-field">FEMALE</span>
 			</div>
-			<div>
-				<label>Email : </label>
+			<div class="group">
+				<label class="field-name">EMAIL</label>
 				<input type="email" name="Email" placeholder="Email" class="field">
 			</div>
-			<div>
-				<label for="Mobile">Mobile : </label>
+			<div class="group">
+				<label for="Mobile" class="field-name">MOBILE</label>
 				<input type="text" name="Mobile" placeholder="Mobile" class="field">
 			</div>
-			<div>
-				<label>Select Language : </label>
+			<div class="group">
+				<label class="field-name">SELECT LANGUAGE</label>
 				<select name="Language" class="field">
 					<option disabled selected value="">none</option>
 					<option value="Hindi">Hindi</option>
@@ -42,8 +42,8 @@
 					<option value="Gojri">Gojri</option>
 				</select>
 			</div>
-			<div>
-				<label>Select Degree : </label>
+			<div class="group">
+				<label class="field-name">SELECT DEGREE</label>
 				<select name="Degree" class="field">
 					<option disabled selected value="">none</option>
 					<option value="B.Tech">B.Tech</option>

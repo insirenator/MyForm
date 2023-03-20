@@ -21,7 +21,7 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
-	height: 600px;
+	height: 700px;
 	width: clamp(350px, 80%, 600px);
 	margin-top: 15px;
 	border: none;
@@ -30,12 +30,36 @@ body {
 	padding: 30px;
 }
 
+.group {
+	display: flex;
+	flex-direction: column;
+	height: 100px;
+	justify-content: space-between;
+	width: 100%;
+	margin: 15px 0;
+}
+
+#gender {
+	margin: 15px 0;
+}
+
+.gender-field {
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.field-name {
+	color: #404040;
+	font-size: 12px;
+}
+
 .field {
 	border: none;
 	box-shadow: 0px 1px 3px black;
 	border-radius: 8px;
-	height: 30px;
+	height: 35px;
 	padding-left: 5px;
+	width: 100%;
 }
 
 .field:hover {
