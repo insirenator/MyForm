@@ -38,6 +38,10 @@ body {
 	padding-left: 5px;
 }
 
+.field:hover {
+	box-shadow: 0px 2px 5px black;
+}
+
 #title {
 	color: #5283EC;
 	margin: 0 auto;
@@ -60,6 +64,7 @@ body {
 
 #submit-btn:hover {
 	background-color: #1673EC; 
+	box-shadow: 0px 2px 5px black;
 }
 
 #submit-btn:active {
@@ -88,7 +93,7 @@ body {
 
 .user {
 	margin-top: 20px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	color: #1293EC;
 	font-weight: bold;
 	box-shadow: 0px 1px 3px black;
@@ -97,6 +102,10 @@ body {
 }
 
 .entry {
+	margin-bottom: 5px;
+}
+
+.entry-title {
 	color: #1293EC;
 }
 

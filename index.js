@@ -31,7 +31,7 @@ function displayData() {
 		data_el.innerHTML += `<p class="user">USER ${i+1}</p>`;
 
 		for (const value of values) {
-		data_el.innerHTML += `<p><span class="entry">${value[0]} :</span> ${value[1]}</p>`; 
+		data_el.innerHTML += `<p class="entry"><span class="entry-title">${value[0]} :</span> ${value[1]}</p>`; 
 	}
 	}
 }
