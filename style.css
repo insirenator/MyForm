@@ -17,8 +17,8 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
-	height: 500px;
-	width: 400px;
+	height: 600px;
+	width: clamp(400px, 80%, 600px);
 	margin-top: 15px;
 	border: none;
 	border-radius: 8px;
@@ -36,17 +36,22 @@
 
 #title {
 	color: #5283EC;
+	margin: 0 auto;
+	margin-bottom: 10px;
 }
 
 #submit-btn {
 	color: white;
 	font-size: 14px;
+	width: 100px;
 	padding: 10px;
 	background-color: #1293EC;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0px 1px 4px black;
-	cursor: pointer; 
+	cursor: pointer;
+	margin: 0 auto; 
+	margin-top: 10px;
 }
 
 #submit-btn:hover {
@@ -57,11 +62,30 @@
 	background-color: #5283EC; 
 }
 
-#data {
+.data {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
-	height: 200px;
+	height: 400px;
+	width: clamp(400px, 80%, 600px);
 	font-size: 18px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 5px black;
+	padding: 30px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#data-title{
+	margin: 0 auto;
+	color: #1293EC;
+}
+
+.entry {
+	color: #5283EC;
+}
+
+.hide {
+	display: none;
 }

@@ -14,10 +14,11 @@ submitBtn.addEventListener('click', (e) => {
 });
 
 function displayData(values) {
-	const data_el = document.querySelector('#data');
-	data_el.innerHTML= '';
+	const data_el = document.querySelector('.data');
+	data_el.innerHTML= '<h3 id="data-title">Details</h3>';
+	data_el.classList.remove('hide');
 
 	for (const value of values) {
-		data_el.innerHTML += `<p>${value[0]} : ${value[1]}</p>`; 
+		data_el.innerHTML += `<p><span class="entry">${value[0]} :</span> ${value[1]}</p>`; 
 	}
 }

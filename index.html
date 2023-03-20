@@ -28,6 +28,10 @@
 				<input type="email" name="Email" placeholder="Email" class="field">
 			</div>
 			<div>
+				<label for="Mobile">Mobile : </label>
+				<input type="text" name="Mobile" placeholder="Mobile" class="field">
+			</div>
+			<div>
 				<label>Select Language : </label>
 				<select name="Language" class="field">
 					<option disabled selected value="">none</option>
@@ -38,11 +42,19 @@
 				</select>
 			</div>
 			<div>
-				<button type="submit" id="submit-btn">Submit</button>
+				<label>Select Degree : </label>
+				<select name="Degree" class="field">
+					<option disabled selected value="">none</option>
+					<option value="B.Tech">B.Tech</option>
+					<option value="B.E.">B.E.</option>
+					<option value="M.Tech">M.Tech</option>
+					<option value="M.E.">M.E.</option>
+				</select>
 			</div>
+			<button type="submit" id="submit-btn">Submit</button>
 		</form>
 
-		<div id="data"></div>
+		<div class="data hide"></div>
 	</main>
 
 	<script src="./index.js"></script>
