@@ -51,18 +51,18 @@ function toObject(values) {
 
 // Display the user data
 function displayData() {
-	data_el.innerHTML = '<h3 id="data-title">USER DETAILS</h3>';
-	data_el.classList.remove('hide');
 
 	let users = JSON.parse(localStorage.getItem('userRecord'));
 
 	if (users === null || users.length === 0) {
+		
 		alert('No Users in Database!');
-	}
+	} else {
 
-	else {
-	console.log("Number of users = " + users.length);
+		console.log("Number of users = " + users.length);
 
+		data_el.innerHTML = '<h3 id="data-title">USER DETAILS</h3>';
+		data_el.classList.remove('hide');
 		users.forEach((user, idx) => {
 			data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
 
