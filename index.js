@@ -10,7 +10,10 @@ let userRecord = function() {
 }();
 
 const form = document.querySelector('#data-form');
+const data_el = document.querySelector('.data');
 const submitBtn = document.querySelector('#submit-btn');
+const showDetailsBtn = document.querySelector('#show-users');
+const hideDetailsBtn = document.querySelector('#hide-users');
 
 submitBtn.addEventListener('click', (e) => {
 	// prevent form submission
@@ -25,8 +28,14 @@ submitBtn.addEventListener('click', (e) => {
 
 	userRecord.push(toObject(values));
 	localStorage.setItem('userRecord', JSON.stringify(userRecord));
+});
 
-	displayData();	
+showDetailsBtn.addEventListener('click', () => {
+	displayData();
+});
+
+hideDetailsBtn.addEventListener('click', () => {
+	data_el.classList.add('hide');
 });
 
 // Convert the nested user array to an object
@@ -42,17 +51,24 @@ function toObject(values) {
 
 // Display the user data
 function displayData() {
-	const data_el = document.querySelector('.data');
-	data_el.innerHTML = '<h3 id="data-title">DETAILS</h3>';
+	data_el.innerHTML = '<h3 id="data-title">USER DETAILS</h3>';
 	data_el.classList.remove('hide');
 
 	let users = JSON.parse(localStorage.getItem('userRecord'));
 
-	users.forEach((user, idx) => {
-		data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
+	if (users === null || users.length === 0) {
+		alert('No Users in Database!');
+	}
 
-		for (const field in user) {
-		data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
-		}
-	});
+	else {
+	console.log("Number of users = " + users.length);
+
+		users.forEach((user, idx) => {
+			data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
+
+			for (const field in user) {
+			data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
+			}
+		});
+	}
 }
