@@ -1,12 +1,12 @@
-let userCount = function() {
-	let count = sessionStorage.getItem('userCount');
+let userRecord = function() {
+	let record = localStorage.getItem('userRecord');
 
-	if (count === null) {
-		sessionStorage.setItem('userCount', 0);
-		return 0;
+	if (record === null) {
+		localStorage.setItem('userRecord', "[]");
+		return [];
 	}
 
-	return parseInt(count) + 1;
+	return JSON.parse(record);
 }();
 
 const form = document.querySelector('#data-form');
@@ -21,27 +21,38 @@ submitBtn.addEventListener('click', (e) => {
 	const values = [...formData.entries()];
 	console.log(values);
 
-	sessionStorage.setItem(userCount, JSON.stringify(values));
-	sessionStorage.setItem('userCount', userCount);
+	// Validation Step
 
-	// Increment the user count
-	userCount++;
+	userRecord.push(toObject(values));
+	localStorage.setItem('userRecord', JSON.stringify(userRecord));
 
 	displayData();	
 });
 
+// Convert the nested user array to an object
+function toObject(values) {
+	userObj = {};
+
+	for (val of values) {
+		userObj[val[0]] = val[1];
+	}
+
+	return userObj;
+}
+
+// Display the user data
 function displayData() {
 	const data_el = document.querySelector('.data');
-	data_el.innerHTML = '<h3 id="data-title">Details</h3>';
+	data_el.innerHTML = '<h3 id="data-title">DETAILS</h3>';
 	data_el.classList.remove('hide');
 
-	for (let i = 0; i < userCount; i++) {
-		let values = JSON.parse(sessionStorage.getItem(i));
+	let users = JSON.parse(localStorage.getItem('userRecord'));
 
-		data_el.innerHTML += `<p class="user">USER ${i+1}</p>`;
+	users.forEach((user, idx) => {
+		data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
 
-		for (const value of values) {
-		data_el.innerHTML += `<p class="entry"><span class="entry-title">${value[0]} :</span> ${value[1]}</p>`; 
+		for (const field in user) {
+		data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
 		}
-	}
+	});
 }
