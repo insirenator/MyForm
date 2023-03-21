@@ -9,7 +9,6 @@ body {
 }
 
 .container{
-	/*height: 100vh;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -123,7 +122,6 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
-/*	min-height: 400px;*/
 	width: clamp(350px, 80%, 600px);
 	font-size: 18px;
 	border-radius: 8px;
