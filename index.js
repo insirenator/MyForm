@@ -24,10 +24,18 @@ submitBtn.addEventListener('click', (e) => {
 	const values = [...formData.entries()];
 	console.log(values);
 
-	// Validation Step
+	// Convert to object
+	const valuesObj = Object.fromEntries(values);
 
-	userRecord.push(toObject(values));
-	localStorage.setItem('userRecord', JSON.stringify(userRecord));
+	// Validation Step
+	if (isValidData(valuesObj)){
+		userRecord.push(valuesObj);
+		localStorage.setItem('userRecord', JSON.stringify(userRecord));
+	}
+	else {
+		alert('Please Fill Out All Field!');
+	}
+
 });
 
 showDetailsBtn.addEventListener('click', () => {
@@ -38,15 +46,14 @@ hideDetailsBtn.addEventListener('click', () => {
 	data_el.classList.add('hide');
 });
 
-// Convert the nested user array to an object
-function toObject(values) {
-	userObj = {};
-
-	for (val of values) {
-		userObj[val[0]] = val[1];
+// Validate the user data
+function isValidData(obj) {
+	for (const val of Object.values(obj)) {
+		if (!val)
+			return false;
 	}
 
-	return userObj;
+	return true;
 }
 
 // Display the user data
@@ -67,7 +74,7 @@ function displayData() {
 			data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
 
 			for (const field in user) {
-				data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
+				data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field]}</p>`; 
 			}
 		});
 	}
