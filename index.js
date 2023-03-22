@@ -29,16 +29,16 @@ submitBtn.addEventListener('click', (e) => {
 
 	// Validation Step for empty fields
 	if (isValidData(valuesObj)){
-		// Validate Phone Number
-		if (!isValidPhoneNumber(valuesObj["Mobile"])) {
-			alert("Invalid Phone Number!");
-		}
-		else if (!isValidEmail(valuesObj["Email"])) {
-			alert("Invalid Email Address!");
-		}
-		else{
+		// Validate Phone Number and Email
+		const validPhone = isValidPhoneNumber(valuesObj["Mobile"]);
+		const validEmail = isValidEmail(valuesObj["Email"]);
+
+		if (validPhone && validEmail) {
 			userRecord.push(valuesObj);
 			localStorage.setItem('userRecord', JSON.stringify(userRecord));
+		}
+		else {
+			alert("Invalid Email or Phone");
 		}
 	}
 	else {
