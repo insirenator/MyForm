@@ -67,7 +67,7 @@ function displayData() {
 			data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
 
 			for (const field in user) {
-			data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
+				data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field].toUpperCase()}</p>`; 
 			}
 		});
 	}

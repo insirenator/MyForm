@@ -6,6 +6,8 @@
 
 body {
 	padding: 10px;
+	background-image: linear-gradient(to bottom, #2FBEFF, #154188);
+
 }
 
 .container{
@@ -20,13 +22,14 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
+	background-color: white;
 	height: 750px;
 	width: clamp(350px, 80%, 600px);
 	margin-top: 15px;
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0px 2px 5px black;
-	padding: 50px;
+	padding: 40px;
 }
 
 .group {
@@ -67,7 +70,7 @@ body {
 }
 
 #title {
-	color: #255EE6;
+	color: #1293EC;
 	margin: 20px auto;
 	font-size: 18px;
 }
@@ -75,7 +78,7 @@ body {
 #submit-btn {
 	color: white;
 	font-size: 14px;
-	width: 200px;
+	width: 120px;
 	padding: 10px;
 	background-color: #1293EC;
 	border: none;
@@ -122,6 +125,7 @@ body {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	background-color: white;
 	width: clamp(350px, 80%, 600px);
 	font-size: 18px;
 	border-radius: 8px;
@@ -156,6 +160,7 @@ body {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: space-around;
+	background-color: white;
 	width: clamp(350px, 80%, 600px);
 	font-size: 18px;
 	border-radius: 8px;
@@ -167,8 +172,8 @@ body {
 
 #data-title{
 	margin: 0 auto;
-	color: #1293EC;
-	font-weight: 400;
+	color: #154188;
+	font-weight: 600;
 	font-size: 18px;
 }
 
@@ -190,7 +195,7 @@ body {
 }
 
 .entry-title {
-	color: #1293EC;
+	color: #154188;
 	font-weight: bold;
 }
 
