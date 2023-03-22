@@ -27,10 +27,16 @@ submitBtn.addEventListener('click', (e) => {
 	// Convert to object
 	const valuesObj = Object.fromEntries(values);
 
-	// Validation Step
+	// Validation Step for empty fields
 	if (isValidData(valuesObj)){
-		userRecord.push(valuesObj);
-		localStorage.setItem('userRecord', JSON.stringify(userRecord));
+		// Validate Phone Number
+		if (!isValidPhoneNumber(valuesObj["Mobile"])) {
+			alert("Invalid Phone Number!");
+		}
+		else{
+			userRecord.push(valuesObj);
+			localStorage.setItem('userRecord', JSON.stringify(userRecord));
+		}
 	}
 	else {
 		alert('Please Fill Out All Field!');
@@ -41,7 +47,7 @@ submitBtn.addEventListener('click', (e) => {
 showDetailsBtn.addEventListener('click', () => {
 	displayData();
 	window.scroll({
-		top: 800,
+		top: 780,
 		left: 0,
 		behavior: "smooth",
 	});
@@ -59,6 +65,11 @@ function isValidData(obj) {
 	}
 
 	return true;
+}
+
+// Validate Phone Number
+function isValidPhoneNumber(num) {
+	return (/^(\+\d\d)?\d{10}$/).test(num);
 }
 
 // Display the user data
