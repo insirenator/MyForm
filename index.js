@@ -40,6 +40,11 @@ submitBtn.addEventListener('click', (e) => {
 
 showDetailsBtn.addEventListener('click', () => {
 	displayData();
+	window.scroll({
+		top: 800,
+		left: 0,
+		behavior: "smooth",
+	});
 });
 
 hideDetailsBtn.addEventListener('click', () => {
