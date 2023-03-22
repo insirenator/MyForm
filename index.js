@@ -33,6 +33,9 @@ submitBtn.addEventListener('click', (e) => {
 		if (!isValidPhoneNumber(valuesObj["Mobile"])) {
 			alert("Invalid Phone Number!");
 		}
+		else if (!isValidEmail(valuesObj["Email"])) {
+			alert("Invalid Email Address!");
+		}
 		else{
 			userRecord.push(valuesObj);
 			localStorage.setItem('userRecord', JSON.stringify(userRecord));
@@ -70,6 +73,11 @@ function isValidData(obj) {
 // Validate Phone Number
 function isValidPhoneNumber(num) {
 	return (/^(\+\d\d)?\d{10}$/).test(num);
+}
+
+// Validate Email
+function isValidEmail(email) {
+	return (/^[a-zA-Z]+[a-zA-Z0-9\.\-]*@[a-zA-Z]+(\.[a-z]{2,3})$/).test(email);
 }
 
 // Display the user data
