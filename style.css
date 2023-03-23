@@ -170,6 +170,16 @@ body {
 	background-color: red;
 }
 
+#clear-users:hover {
+	color: white;
+	background-color: #bf0202;
+}
+
+#clear-users:active {
+	color: white;
+	background-color: #d02020;
+}
+
 .data {
 	display: flex;
 	flex-direction: column;

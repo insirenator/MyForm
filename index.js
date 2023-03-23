@@ -1,17 +1,5 @@
 // THE MAIN SCRIPT
 
-// Stores the all users data
-let userRecord = function() {
-	let record = localStorage.getItem('userRecord');
-
-	if (record === null) {
-		localStorage.setItem('userRecord', "[]");
-		return [];
-	}
-
-	return JSON.parse(record);
-}();
-
 // HTML Elements
 const form = document.querySelector('#data-form');
 const data_el = document.querySelector('.data');
@@ -39,6 +27,17 @@ submitBtn.addEventListener('click', (e) => {
 		const validEmail = isValidEmail(valuesObj["Email"]);
 
 		if (validPhone && validEmail) {
+			// Stores the all users data
+			let userRecord = function() {
+				let record = localStorage.getItem('userRecord');
+
+				if (record === null) {
+					localStorage.setItem('userRecord', "[]");
+					return [];
+				}
+
+				return JSON.parse(record);
+			}();
 			userRecord.push(valuesObj);
 			localStorage.setItem('userRecord', JSON.stringify(userRecord));
 		}
@@ -71,7 +70,14 @@ showDetailsBtn.addEventListener('click', () => {
 
 // Clear Details Button Event Listener
 clearDetailsBtn.addEventListener('click', () => {
+	// clear the local storage
 	localStorage.clear();
+
+	// Collapse the data box if not hidden
+	if(!data_el.classList.contains('hide')){
+		data_el.classList.add('hide');
+		showDetailsBtn.textContent = "Show Users";
+	}
 });
 
 // Validates the user data for empty fields
