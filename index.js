@@ -1,3 +1,6 @@
+// THE MAIN SCRIPT
+
+// Stores the all users data
 let userRecord = function() {
 	let record = localStorage.getItem('userRecord');
 
@@ -9,12 +12,14 @@ let userRecord = function() {
 	return JSON.parse(record);
 }();
 
+// HTML Elements
 const form = document.querySelector('#data-form');
 const data_el = document.querySelector('.data');
 const submitBtn = document.querySelector('#submit-btn');
 const showDetailsBtn = document.querySelector('#show-users');
 const hideDetailsBtn = document.querySelector('#hide-users');
 
+// Submit Button Event Listener
 submitBtn.addEventListener('click', (e) => {
 	// prevent form submission
 	e.preventDefault();
@@ -47,6 +52,7 @@ submitBtn.addEventListener('click', (e) => {
 
 });
 
+// Show Details Button Event Listener
 showDetailsBtn.addEventListener('click', () => {
 	displayData();
 	window.scroll({
@@ -56,11 +62,12 @@ showDetailsBtn.addEventListener('click', () => {
 	});
 });
 
+// Hide Details Button Event Listener
 hideDetailsBtn.addEventListener('click', () => {
 	data_el.classList.add('hide');
 });
 
-// Validate the user data
+// Validates the user data for empty fields
 function isValidData(obj) {
 	for (const val of Object.values(obj)) {
 		if (!val)
@@ -70,17 +77,17 @@ function isValidData(obj) {
 	return true;
 }
 
-// Validate Phone Number
+// Validates Phone Number
 function isValidPhoneNumber(num) {
 	return (/^(\+\d\d)?\d{10}$/).test(num);
 }
 
-// Validate Email
+// Validates Email
 function isValidEmail(email) {
 	return (/^[a-zA-Z]+[a-zA-Z0-9\.\-]*@[a-zA-Z]+(\.[a-z]{2,3})$/).test(email);
 }
 
-// Display the user data
+// Displays the user data in organised form
 function displayData() {
 
 	let users = JSON.parse(localStorage.getItem('userRecord'));
@@ -98,7 +105,7 @@ function displayData() {
 			data_el.innerHTML += `<p class="user">USER ${idx+1}</p>`;
 
 			for (const field in user) {
-				data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> ${user[field]}</p>`; 
+				data_el.innerHTML += `<p class="entry"><span class="entry-title">${field.toUpperCase()} :</span> <span class="entry-field">${user[field]}</span></p>`; 
 			}
 		});
 	}

@@ -23,7 +23,6 @@ body {
 	align-items: flex-start;
 	justify-content: space-around;
 	background-color: white;
-	height: 750px;
 	width: clamp(350px, 80%, 600px);
 	margin-top: 15px;
 	border: none;
@@ -35,7 +34,6 @@ body {
 .group {
 	display: flex;
 	flex-direction: column;
-	height: 100px;
 	justify-content: space-between;
 	width: 100%;
 	margin: 15px 0;
@@ -202,13 +200,18 @@ body {
 }
 
 .entry {
+	display: flex;
+	justify-content: flex-start;
 	margin-bottom: 5px;
-	font-size: 14px
+	font-size: 14px;
+	width: 100%;
 }
 
 .entry-title {
 	color: #154188;
 	font-weight: bold;
+	margin-right: 15px;
+	width: 110px;
 }
 
 .hide {

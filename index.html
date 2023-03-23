@@ -8,33 +8,44 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<!-- Main Container -->
 	<main class="container">
+		<!-- Main Form -->
 		<form class="form" id="data-form">
+			<!-- Form Title -->
 			<h2 id="title">ENTER YOUR DETAILS</h2>
+			<!-- First Name -->
 			<div class="group">
 				<label for="First Name" class="field-name">FIRST NAME<span class="asterisk">*</span></label>
-				<input type="text" name="First Name" placeholder="First Name" class="field">
+				<input type="text" name="First Name" placeholder="First Name" class="field" id="first-name">
+				<p class="error hide" id="first-name-error">Please enter First Name</p>
 			</div>
+			<!-- Last Name -->
 			<div class="group">
 				<label for="Last Name" class="field-name">LAST NAME<span class="asterisk">*</span></label>
-				<input type="text" name="Last Name" placeholder="Last Name" class="field">
+				<input type="text" name="Last Name" placeholder="Last Name" class="field" id="last-name">
+				<p class="error hide" id="last-name-error">Please enter Last Name</p>
 			</div>
+			<!-- Gender -->
 			<div id="gender">
 				<label for="Gender" class="field-name">GENDER<span class="asterisk">*</span> : </label>
 				<input type="radio" name="Gender" value="Male" checked> <span class="gender-field">MALE</span>
 				<input type="radio" name="Gender" value="Female"> <span class="gender-field">FEMALE</span>
 				<input type="radio" name="Gender" value="Others"> <span class="gender-field">OTHERS</span>
 			</div>
+			<!-- Email -->
 			<div class="group">
 				<label class="field-name">EMAIL<span class="asterisk">*</span></label>
 				<input type="email" name="Email" placeholder="Email" class="field" id="email">
 				<p class="error hide" id="email-error">Please enter a valid email address.</p>
 			</div>
+			<!-- Mobile -->
 			<div class="group">
 				<label for="Mobile" class="field-name">MOBILE<span class="asterisk">*</span></label>
 				<input type="tel" name="Mobile" placeholder="Mobile" class="field" id="mobile">
 				<p class="error hide" id="mobile-error">Please enter a valid mobile number.</p>
 			</div>
+			<!-- Language -->
 			<div class="group">
 				<label class="field-name">SELECT LANGUAGE<span class="asterisk">*</span></label>
 				<select name="Language" class="field">
@@ -45,6 +56,7 @@
 					<option value="Gojri">Gojri</option>
 				</select>
 			</div>
+			<!-- Degree -->
 			<div class="group">
 				<label class="field-name">SELECT DEGREE<span class="asterisk">*</span></label>
 				<select name="Degree" class="field">
@@ -55,17 +67,18 @@
 					<option value="M.E.">M.E.</option>
 				</select>
 			</div>
+			<!-- Submit Button -->
 			<button type="submit" id="submit-btn">Submit</button>
 		</form>
-
+		<!-- Controls -->
 		<div class="controls">
 			<button id="show-users" class="control-btn">Show Users</button>
 			<button id="hide-users" class="control-btn">Hide Users</button>
 		</div>
-
+		<!-- Data Display Section -->
 		<div class="data hide"></div>
 	</main>
-
+	<!-- Scripts -->
 	<script src="./index.js"></script>
 	<script src="./error_validations.js"></script>
 </body>
