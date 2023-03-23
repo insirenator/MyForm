@@ -27,11 +27,13 @@
 			</div>
 			<div class="group">
 				<label class="field-name">EMAIL<span class="asterisk">*</span></label>
-				<input type="email" name="Email" placeholder="Email" class="field">
+				<input type="email" name="Email" placeholder="Email" class="field" id="email">
+				<p class="error hide" id="email-error">Please enter a valid email address.</p>
 			</div>
 			<div class="group">
 				<label for="Mobile" class="field-name">MOBILE<span class="asterisk">*</span></label>
-				<input type="tel" name="Mobile" placeholder="Mobile" class="field">
+				<input type="tel" name="Mobile" placeholder="Mobile" class="field" id="mobile">
+				<p class="error hide" id="mobile-error">Please enter a valid mobile number.</p>
 			</div>
 			<div class="group">
 				<label class="field-name">SELECT LANGUAGE<span class="asterisk">*</span></label>
@@ -65,5 +67,6 @@
 	</main>
 
 	<script src="./index.js"></script>
+	<script src="./error_validations.js"></script>
 </body>
 </html>
