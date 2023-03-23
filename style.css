@@ -162,7 +162,12 @@ body {
 }
 
 .control-btn:active {
-	background-color: #5283EC; 
+	background-color: #b0b0b0; 
+}
+
+#clear-users {
+	color: white;
+	background-color: red;
 }
 
 .data {

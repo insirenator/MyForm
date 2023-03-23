@@ -17,7 +17,7 @@ const form = document.querySelector('#data-form');
 const data_el = document.querySelector('.data');
 const submitBtn = document.querySelector('#submit-btn');
 const showDetailsBtn = document.querySelector('#show-users');
-const hideDetailsBtn = document.querySelector('#hide-users');
+const clearDetailsBtn = document.querySelector('#clear-users');
 
 // Submit Button Event Listener
 submitBtn.addEventListener('click', (e) => {
@@ -54,17 +54,24 @@ submitBtn.addEventListener('click', (e) => {
 
 // Show Details Button Event Listener
 showDetailsBtn.addEventListener('click', () => {
-	displayData();
-	window.scroll({
-		top: 780,
-		left: 0,
-		behavior: "smooth",
-	});
+	if(data_el.classList.contains('hide')){
+		displayData(); // Also sets the button to hide users
+		window.scroll({
+			top: 780,
+			left: 0,
+			behavior: "smooth",
+		});
+	}
+
+	else {
+		data_el.classList.add('hide');
+		showDetailsBtn.textContent = "Show Users";
+	}
 });
 
-// Hide Details Button Event Listener
-hideDetailsBtn.addEventListener('click', () => {
-	data_el.classList.add('hide');
+// Clear Details Button Event Listener
+clearDetailsBtn.addEventListener('click', () => {
+	localStorage.clear();
 });
 
 // Validates the user data for empty fields
@@ -98,6 +105,9 @@ function displayData() {
 	} else {
 
 		console.log("Number of users = " + users.length);
+		
+		// Set the button to hide user
+		showDetailsBtn.textContent = "Hide Users";
 
 		data_el.innerHTML = '<h3 id="data-title">USER DETAILS</h3>';
 		data_el.classList.remove('hide');
