@@ -82,6 +82,14 @@ language.addEventListener('change', () => {
 	}
 });
 
+language.addEventListener('click', () => {
+	if(!language.value){
+		if(languageError.classList.contains('hide'))
+			languageError.classList.remove('hide');
+		language.style.border = "1px solid red";
+	}
+});
+
 degree.addEventListener('change', () => {
 	if(!degree.value){
 		if(degreeError.classList.contains('hide'))
@@ -91,5 +99,13 @@ degree.addEventListener('change', () => {
 	else {
 		degreeError.classList.add('hide');
 		degree.style.border = "none";
+	}
+});
+
+degree.addEventListener('click', () => {
+	if(!degree.value){
+		if(degreeError.classList.contains('hide'))
+			degreeError.classList.remove('hide');
+		degree.style.border = "1px solid red";
 	}
 });
