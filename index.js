@@ -37,6 +37,7 @@ submitBtn.addEventListener('click', (e) => {
 		// Update Local Storage
 		userRecord.push(valuesObj);
 		localStorage.setItem('userRecord', JSON.stringify(userRecord));
+		showTick(); // Show the submitted tick
 	}
 });
 
@@ -106,6 +107,15 @@ function isValidEmail(email) {
 // Check whether there is anything to display
 function isNotDisplayable(data){
 	return (data === null || data.length === 0);
+}
+
+function showTick() {
+	const tick = document.querySelector('#submitted');
+	tick.classList.remove('hide');
+
+	setTimeout(() => {
+		tick.classList.add('hide');
+	}, 1000);
 }
 
 // Displays the user data in organised form

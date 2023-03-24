@@ -28,7 +28,7 @@ body {
 	border: none;
 	border-radius: 8px;
 	box-shadow: 0px 2px 5px black;
-	padding: 40px;
+	padding: 18px 40px;
 }
 
 .group {
@@ -106,6 +106,14 @@ body {
 
 #submit-btn:active {
 	background-color: #5283EC; 
+}
+
+#submitted {
+	font-size: 20px;
+	font-weight: bolder;
+	color: #12dd3b;
+	margin: 0 auto; 
+	margin-top: 10px;
 }
 
 #clear-btn {
@@ -227,6 +235,17 @@ body {
 	font-weight: bold;
 	margin-right: 15px;
 	width: 110px;
+}
+
+#end-credit{
+	color: white;
+	margin: 10px 0;
+	font-size: 14px;
+}
+
+#heart{
+	color: red;
+	font-size: 18px;
 }
 
 .hide {
