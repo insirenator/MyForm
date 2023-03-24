@@ -103,16 +103,20 @@ function isValidEmail(email) {
 	return (/^[a-zA-Z]+[a-zA-Z0-9\.\-]*@[a-zA-Z]+(\.[a-z]{2,3})$/).test(email);
 }
 
+// Check whether there is anything to display
+function isNotDisplayable(data){
+	return (data === null || data.length === 0);
+}
+
 // Displays the user data in organised form
 function displayData() {
 
 	let users = JSON.parse(localStorage.getItem('userRecord'));
 
-	if (users === null || users.length === 0) {
-		
+	if (isNotDisplayable(users)) {
 		alert('No Users in Database!');
-	} else {
-
+	} 
+	else {
 		console.log("Number of users = " + users.length);
 		
 		// Set the button to hide user

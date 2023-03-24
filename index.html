@@ -18,13 +18,13 @@
 			<div class="group">
 				<label for="First Name" class="field-name">FIRST NAME<span class="asterisk">*</span></label>
 				<input type="text" name="First Name" placeholder="First Name" class="field" id="first-name">
-				<p class="error hide" id="first-name-error">Please enter First Name</p>
+				<p class="error hide" id="first-name-error">Please enter First Name.</p>
 			</div>
 			<!-- Last Name -->
 			<div class="group">
 				<label for="Last Name" class="field-name">LAST NAME<span class="asterisk">*</span></label>
 				<input type="text" name="Last Name" placeholder="Last Name" class="field" id="last-name">
-				<p class="error hide" id="last-name-error">Please enter Last Name</p>
+				<p class="error hide" id="last-name-error">Please enter Last Name.</p>
 			</div>
 			<!-- Gender -->
 			<div id="gender">
@@ -48,24 +48,26 @@
 			<!-- Language -->
 			<div class="group">
 				<label class="field-name">SELECT LANGUAGE<span class="asterisk">*</span></label>
-				<select name="Language" class="field">
+				<select name="Language" id="language" class="field">
 					<option selected value="">none</option>
 					<option value="Hindi">Hindi</option>
 					<option value="English">English</option>
 					<option value="Kashmiri">Kashmiri</option>
 					<option value="Gojri">Gojri</option>
 				</select>
+				<p class="error hide" id="language-error">Please select a Language.</p>
 			</div>
 			<!-- Degree -->
 			<div class="group">
 				<label class="field-name">SELECT DEGREE<span class="asterisk">*</span></label>
-				<select name="Degree" class="field">
+				<select name="Degree" id="degree" class="field">
 					<option selected value="">none</option>
 					<option value="B.Tech">B.Tech</option>
 					<option value="B.E.">B.E.</option>
 					<option value="M.Tech">M.Tech</option>
 					<option value="M.E.">M.E.</option>
 				</select>
+				<p class="error hide" id="degree-error">Please select a Degree.</p>
 			</div>
 			<!-- Submit Button -->
 			<button type="submit" id="submit-btn">Submit</button>
