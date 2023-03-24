@@ -60,13 +60,15 @@ showDetailsBtn.addEventListener('click', () => {
 
 // Clear Details Button Event Listener
 clearDetailsBtn.addEventListener('click', () => {
-	// clear the local storage
-	localStorage.clear();
+	if(confirm("Clear the Local Storage?")) {
+		// clear the local storage
+		localStorage.clear();
 
-	// Collapse the data box if not hidden
-	if(!data_el.classList.contains('hide')){
-		data_el.classList.add('hide');
-		showDetailsBtn.textContent = "Show Users";
+		// Collapse the data box if not hidden
+		if(!data_el.classList.contains('hide')){
+			data_el.classList.add('hide');
+			showDetailsBtn.textContent = "Show Users";
+		}
 	}
 });
 
@@ -96,7 +98,7 @@ function isValidData(valuesObj){
 
 // Validates Phone Number
 function isValidPhoneNumber(num) {
-	return (/^(\+\d\d)?\d{10}$/).test(num);
+	return (/^\d{10}$/).test(num);
 }
 
 // Validates Email
