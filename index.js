@@ -12,7 +12,7 @@ submitBtn.addEventListener('click', (e) => {
 	// prevent form submission
 	e.preventDefault();
 
-	// show the form values
+	// Get the form values
 	const formData = new FormData(form);
 	const values = [...formData.entries()];
 	console.log(values);
@@ -22,13 +22,8 @@ submitBtn.addEventListener('click', (e) => {
 
 	// Validation Step for empty fields
 	if (isValidData(valuesObj)){
-		// Validate Phone Number and Email
-		const validPhone = isValidPhoneNumber(valuesObj["Mobile"]);
-		const validEmail = isValidEmail(valuesObj["Email"]);
 
-		if (validPhone && validEmail) {
-			// Stores the all users data
-			let userRecord = function() {
+		let userRecord = function() {
 				let record = localStorage.getItem('userRecord');
 
 				if (record === null) {
@@ -38,17 +33,11 @@ submitBtn.addEventListener('click', (e) => {
 
 				return JSON.parse(record);
 			}();
-			userRecord.push(valuesObj);
-			localStorage.setItem('userRecord', JSON.stringify(userRecord));
-		}
-		else {
-			alert("Invalid Email or Phone");
-		}
-	}
-	else {
-		alert('Please Fill Out All Field!');
-	}
 
+		// Update Local Storage
+		userRecord.push(valuesObj);
+		localStorage.setItem('userRecord', JSON.stringify(userRecord));
+	}
 });
 
 // Show Details Button Event Listener
@@ -80,14 +69,28 @@ clearDetailsBtn.addEventListener('click', () => {
 	}
 });
 
-// Validates the user data for empty fields
-function isValidData(obj) {
-	for (const val of Object.values(obj)) {
-		if (!val)
+// Validates the user data fields
+function isValidData(valuesObj){
+	// Check for Empty fields
+	for (const val of Object.values(valuesObj)) {
+		if (!val){
+			alert('Please Fill Out All Fields!');
 			return false;
+		}
 	}
 
+	// Validate Email and Phone Number
+	const validPhone = isValidPhoneNumber(valuesObj["Mobile"]);
+	const validEmail = isValidEmail(valuesObj["Email"]);
+
+	if (!validPhone || !validEmail){
+		alert('Invalid Email or Phone Number');
+		return false;
+	}
+
+	// If all good
 	return true;
+
 }
 
 // Validates Phone Number
