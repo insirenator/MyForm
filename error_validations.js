@@ -70,7 +70,7 @@ const languageError = document.querySelector('#language-error');
 const degree = document.querySelector('#degree');
 const degreeError = document.querySelector('#degree-error');
 
-language.addEventListener('click', () => {
+language.addEventListener('change', () => {
 	if(!language.value){
 		if(languageError.classList.contains('hide'))
 			languageError.classList.remove('hide');
@@ -82,7 +82,7 @@ language.addEventListener('click', () => {
 	}
 });
 
-degree.addEventListener('click', () => {
+degree.addEventListener('change', () => {
 	if(!degree.value){
 		if(degreeError.classList.contains('hide'))
 			degreeError.classList.remove('hide');
